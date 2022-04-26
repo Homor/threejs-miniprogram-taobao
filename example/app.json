@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "defaultTitle": "淘积木互动小程序",
+    "navigationBarForceEnable": true,
+    "allowsBounceVertical": "NO",
+    "enableSkia": "true"
+  },
+  "plugins": {
+    "taojimu": {
+      "version": "*",
+      "provider": "3000000040708051"
+    }
+  }
+}
