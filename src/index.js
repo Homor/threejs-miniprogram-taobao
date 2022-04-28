@@ -2,7 +2,7 @@
  * @Author: molor
  * @Date: 2022-04-26 14:30:09
  * @LastEditors: molor
- * @LastEditTime: 2022-04-26 14:48:24
+ * @LastEditTime: 2022-04-28 16:49:38
  * @FilePath: \threejs-miniprogram-taobao\src\index.js
  */
 import { atob as _atob } from "abab";
@@ -45,9 +45,7 @@ export function createScopedThreejs(canvas) {
       if (type === "img"){
         const img =  canvas.createImage();
         img.addEventListener = function(type,cb){
-          console.log('img.addEventListener',type);
           if(type=='load'){
-            console.log('load');
             img.onload = cb.bind(img);
           }else if(type=='error'){
             img.onerror = cb.bind(img);
@@ -56,7 +54,6 @@ export function createScopedThreejs(canvas) {
 
         img.removeEventListener = function(type,cb){
           if(type=='load'){
-            console.log('load');
             img.onload = null;
           }else if(type=='error'){
             img.onerror = null;

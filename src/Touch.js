@@ -2,8 +2,8 @@
  * @Author: molor
  * @Date: 2022-04-26 11:51:58
  * @LastEditors: molor
- * @LastEditTime: 2022-04-26 13:57:47
- * @FilePath: \threejs-miniappe:\s\node_modules\_@tbminiapp_threejs-miniapp@0.0.1@@tbminiapp\threejs-miniapp\src\Touch.js
+ * @LastEditTime: 2022-04-28 16:48:42
+ * @FilePath: \threejs-miniprogram-taobao\src\Touch.js
  */
 export default function Touch(EventBus) {
   // constructor(EventBus){
@@ -18,10 +18,12 @@ export default function Touch(EventBus) {
         console.log('无效点击事件,', type);
       } else {
         e.touches.forEach(item => {
-          item.pageX = item.x;
-          item.pageY = item.y;
-          item.clientX = item.x;
-          item.clientY = item.y;
+          if(item.x!==undefined){
+            item.pageX = item.x;
+            item.pageY = item.y;
+            item.clientX = item.x;
+            item.clientY = item.y;
+          }
         });
         EventBus.dispatchEvent(e);
       }
@@ -30,10 +32,13 @@ export default function Touch(EventBus) {
         e.touches = [];
       }else{
         e.touches.forEach(item => {
-          item.pageX = item.x;
-          item.pageY = item.y;
-          item.clientX = item.x;
-          item.clientY = item.y;
+          if(item.x!==undefined){
+            item.pageX = item.x;
+            item.pageY = item.y;
+            item.clientX = item.x;
+            item.clientY = item.y;
+          }
+
         });
       }
 
@@ -41,15 +46,16 @@ export default function Touch(EventBus) {
         console.log('无效点击事件,', type);
       } else {
         e.changedTouches.forEach(item => {
-          item.pageX = item.x;
-          item.pageY = item.y;
-          item.clientX = item.x;
-          item.clientY = item.y;
+          if(item.x!==undefined){
+            item.pageX = item.x;
+            item.pageY = item.y;
+            item.clientX = item.x;
+            item.clientY = item.y;
+          }
+   
         });
         EventBus.dispatchEvent(e);
       }
-      
     }
-
   }
 }
